@@ -4,6 +4,15 @@ import { useNavigate } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.css';
 import Header from '../components/Header/header';
+import sideImage from '../images/Sije/SiJE31.png';
+import webImage from '../images/Sije/SIJE.jpg';
+import mobileImage from '../images/Sije/Banner_Mobile.jpg';
+import venueImage from '../images/Sije/Venue.png';
+import collectionImage from '../images/Sije/SijeCollection.jpg';
+import mob1 from '../images/Sije/mob1.jpg';
+import mob2 from '../images/Sije/mob2.jpg';
+import mob3 from '../images/Sije/mob3.jpg';
+import mob4 from '../images/Sije/mob4.jpg';
 
 
 function App() {
@@ -137,10 +146,10 @@ function App() {
         <div className="container">
            <Header/>
             <div className="top-half">
-                <img src='../images/Sije/SIJE.jpg' alt="SIJE" className="full-image web-image" />
-                <img src='../images/Sije/Banner_Mobile.jpg' alt="SIJE" className="full-image mobile-image" />
+                <img src={webImage} alt="SIJE" className="full-image web-image" />
+                <img src={mobileImage} alt="SIJE" className="full-image mobile-image" />
                 <div className="overlay">
-                    <img src='../images/Sije/sije31.png' alt="SIJE" className="form-image" />
+                    <img src={sideImage} alt="SIJE" className="form-image" />
                     <div className="form-container">
                         <h1 className="heading">VISIT BHIMA AT SIJE</h1>
                         <form onSubmit={handleSubmit}>
@@ -191,24 +200,24 @@ function App() {
                     </p>
                 </div>
                 <div className="bottom-half-image">
-                    <img src="../images/Sije/venue.png" alt="Description of the image" />
+                    <img src={venueImage} alt="Description of the image" />
                 </div>
                 <div className="bottom-half-image1">
-                    <img src="../images/Sije/SijeCollection.jpg" alt="Description of the image" />
+                    <img src={collectionImage} alt="Description of the image" />
                 </div>
                 <div className="carousel-container">
                     <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false}>
                         <div>
-                            <img src="../images/Sije/mob1.jpg" alt="Description of the image" />
+                            <img src={mob1} alt="Description of the image" />
                         </div>
                         <div>
-                            <img src="../images/Sije/mob2.jpg" alt="Description of the image" />
+                            <img src={mob2} alt="Description of the image" />
                         </div>
                         <div>
-                            <img src="../images/Sije/mob3.jpg" alt="Description of the image" />
+                            <img src={mob3} alt="Description of the image" />
                         </div>
                         <div>
-                            <img src="../images/Sije/mob4.jpg" alt="Description of the image" />
+                            <img src={mob4} alt="Description of the image" />
                         </div>
                         {/* Add more images as needed */}
                     </Carousel>
