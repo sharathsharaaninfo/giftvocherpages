@@ -1,0 +1,20 @@
+.header {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 9999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .logo {
+    max-width: 270px;
+    margin-left: 1px;
+    max-height: 80px;
+  }
+  @media (max-width: 767px) {
+    .logo {
+      max-height: 50%;
+    }
+    }

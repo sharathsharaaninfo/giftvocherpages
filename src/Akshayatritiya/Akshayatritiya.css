@@ -1,0 +1,318 @@
+/* General styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%; */
+  }
+  
+  /* .h5-heading{
+    margin-top: 260px !important;
+  } */
+
+  .card{
+    margin-top: 4% !important;
+  }
+  
+  .page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .header {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 9999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .terms-container {
+    max-height: calc(100vh - 240px); /* Subtract the margin-top value from 100vh */
+  }
+  
+  .banner-container {
+    width: 100%;
+    /* max-height: 80px; */
+    margin-top: -10px; /* Ensure enough space below the banner */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Ensure terms and conditions have enough margin-top */
+  .terms-and-conditions {
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: 100%; /* Set the maximum height to 100% */
+  }
+  
+  .desktop-banner {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+  
+  .mobile-banner {
+    display: none;
+    width: 100%;
+    height: auto;
+  }
+  
+  .logo {
+    max-width: 270px;
+    margin-left: 1px;
+    max-height: 80px;
+  }
+  
+  .card {
+    border-color: black;
+    box-sizing: border-box;
+  }
+  
+  .card-body {
+    padding: 15px;
+    max-height: 400px; /* Adjust as needed */
+  }
+  
+  .voucher-details {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(129, 15, 15);
+  }
+  
+  .modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    margin: 0;
+    left: 30%;
+    top: 30%;
+  }
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    max-width: 80%;
+    max-height: 70%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    /* Center the modal content */
+    margin: auto;
+    box-sizing: border-box;
+}
+  
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1050;
+    overflow: hidden;
+  }
+  
+  .popup-dialog {
+    width: 50%;
+    height: 90%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 70px;
+  }
+  .popup-content {
+    width: 100%;
+    max-height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .popup-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .popup-body {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+  }
+  
+  .popup-body iframe {
+    width: 100%;
+    height: 50vh;
+  }
+  
+  .close {
+    margin-left: auto;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+  }
+  
+  .closeicon {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1060;
+    border: none;
+    background: none;
+    padding: 0;
+    line-height: 1;
+  }
+  
+  .blurred {
+    filter: blur(5px);
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  li {
+    font-family: Baskerville, serif !important;
+    font-size: 15px;
+    font-weight: 400 !important;
+    line-height: 25px;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 767px) {
+    .desktop-banner {
+      display: none;
+    }
+    .banner-container {
+      margin-top: 70px;
+      height: auto !important;
+      width: 100%;
+    }
+    .mobile-banner {
+      display: block;
+    }
+    /* .col-lg-7 .card-body.mobile-steps {
+      margin-top: -400px;
+      width:auto;
+    } */
+    .logo {
+      max-height: 50%;
+    }
+    .col-lg-5 .card.textbox {
+      margin-top: 50px;
+    }
+    .terms-container {
+      margin-top: 20px; /* Adjust this value as needed for mobile */
+      max-height: calc(100vh - 240px); /* Subtract the margin-top value from 100vh */
+    }
+    .modal-dialog {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 70vh;
+      margin: 0;
+      left: 0%;
+      top: 10%;
+    }
+    .h5-heading{
+      margin-top: 40px !important;
+    }
+    .card{
+      margin-top: 5% !important;
+    }
+    .row{
+        margin-top: auto;
+      }
+   
+  }
+  
+  /* Tablet and Desktop Styles */
+  @media (min-width: 769px) {
+    
+    .col-lg-5 > .h5-heading {
+      margin-top: 0%; /* Adjust this value as needed */
+    }
+    .col-lg-7 .card-body.mobile-steps {
+      margin-top: -20px;
+    }
+    .textbox {
+      margin-top: 20px; /* Adjust this to reduce space between heading and card */
+    }
+  
+    /* .terms-container {
+      margin-top: 70px;  Adjust this value as needed for desktop 
+    } */
+  }
+  
+  @media (min-width: 1024px) {
+    .popup-dialog {
+      width: 50%;
+      height: 70%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .popup-dialog {
+      width: 95%;
+      height: 60%;
+      top: 20%;
+      transform: translate(-50%, -20%);
+    }
+    .popup-body iframe {
+      height: 300px;
+    }
+  
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+  .row {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .col-lg-5>.h5-heading {
+    margin-top: -20px !important;
+    /* Adjust this value as needed */
+  }
+
+  .terms-container {
+    margin-top: 30px;
+    /* Adjust this value as needed for desktop */
+  }
+
+  .col-lg-7 .card-body.mobile-steps {
+    margin-top: 0px;
+  }
+}

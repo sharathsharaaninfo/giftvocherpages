@@ -1,0 +1,372 @@
+/* .app {
+  display: flex;
+  flex-wrap: wrap; 
+  background-color: white;
+  margin-top: 0px;
+} */
+
+
+/* li{
+  font-family: baskerville!important;
+  font-size: 15px;
+  font-weight: 400!important;
+   line-height: 25px;
+}
+
+img {
+  width: 2260px;
+  max-height: 80%;
+  margin-top: 0px;
+  position: relative;
+  z-index: 1;
+  vertical-align: middle;
+} */
+
+.card{
+  border-color: black;
+  box-sizing: border-box;
+}
+
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  margin: 0;
+}
+.voucher-details{
+  text-align: center;
+  font-weight: bold;
+  color: rgb(129, 15, 15);
+}
+.logo {
+  max-width: 270px;
+  margin-left: 1px;
+  max-height: 80px;
+ }
+
+ 
+
+.header {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 9999; /* Adjust as needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+ 
+}
+
+.banner-container {
+  width: 100%;
+  /* max-height: 190px; */
+  /* margin-bottom: 100px; */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Only display the desktop banner image on desktop screens */
+.desktop-banner {
+  display: block;
+  max-width: 3734px;
+  max-height:1067px; 
+  margin-top: 10px; 
+ 
+}
+
+.mobile-banner {
+  display: none;
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1050;
+  overflow: hidden;
+
+}
+
+.popup-dialog {
+  width: 50%; /* Adjust this to increase or decrease width */
+  height: 90%; /* Adjust this to increase or decrease height */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Keeps the modal centered */
+  z-index: 1050;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff; /* Optional: sets background color */
+  padding: 1rem; /* Optional: adds padding inside the dialog */
+  border-radius: 10px; /* Optional: rounds the corners */
+}
+
+
+.popup-content {
+  width: 100%;  /* Takes full width of the dialog */
+  max-height: 100%;  /* Ensures it does not overflow the dialog */
+  overflow: auto;  /* Adds scrollbars if content overflows */
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: flex-start; /* Aligns children (including the close button) to the left */
+  align-items: center;
+  padding: 1rem; /* Add padding as necessary */
+}
+
+.popup-body {
+  width: 100%;  /* Ensure the body takes full width of the content area */
+  height: 600px;  /* Define a specific height or adjust as needed */
+  overflow: hidden;  /* Hide overflow, adjust if you want scrolling */
+}
+.popup-body iframe {
+  width: 100%;  /* Full width of the modal body */
+  height: 50vh;  /* 50% of the viewport height */
+}
+
+.close {
+  margin-left: auto; /* Pushes all other elements to the right, keeps close button on the left */
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+}
+
+.closeicon {
+  position: absolute;
+  top: 0px;  
+  right: 10px;
+  color: #fff;  
+  font-size: 30px;  
+  cursor: pointer;  
+  z-index: 1060;  
+  border: none; 
+  background: none;  
+  padding: 0;  
+  line-height: 1;  
+}
+.terms-container {
+  /* margin-top: 150px; Adjust this value as needed */
+  max-height: calc(100vh - 240px); /* Subtract the margin-top value from 100vh */
+ 
+}
+.terms-container .h4
+.terms-and-conditions {
+  margin-top: 200px; /* Adjust as needed */
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-height: 100%; /* Set the maximum height to 100% */
+  
+}
+.blurred {
+  filter: blur(5px);
+  pointer-events: none; /* Optional: prevents interaction with elements behind the modal */
+  user-select: none; /* Optional: prevents text selection behind the modal */
+}
+/* Home.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.centered-content {
+  font-size: 3rem; /* Large font size */
+  text-align: center;
+}
+
+
+.h5-heading {
+  margin-top: 20px; /* Adjust top margin to push it down below the banner */
+  text-align: center; /* Center align the text */
+  color: #333; /* Ensure the color makes it visible against the background */
+}
+
+/* Adjust styles for different screen sizes as needed */
+
+/* Mobile view banner image */
+@media (max-width: 767px) {
+  .desktop-banner {
+    display: none;
+  }
+  .mobile-banner {
+    display: block;
+  }
+  
+}
+
+/* Adjust banner images and "Steps to claim" text margin for both mobile and desktop views */
+@media (min-width: 768px) {
+  .banner-container {
+    margin-top: 120px; /* Adjust this value as needed */
+  }
+
+  .col-lg-7 .card-body.mobile-steps {
+    margin-bottom: -10px; /* Adjust this value as needed */
+  }
+  .textbox{
+    margin-bottom: 10px;
+  }
+  
+
+
+}
+
+/*mobile view*/
+/* Add a single media query for mobile view */
+@media (max-width: 767px) {
+  /* Adjust the margin-top for the banner container in mobile view */
+  /* .banner-container {
+     margin-bottom: -100px; You can adjust this value as needed 
+  } */
+  /* .col-lg-5 .card.textbox{
+    margin-bottom: 200px;
+  } */
+  .logo {
+    max-height: 50%;
+  }
+  
+}
+
+/* Default styles */
+/* ... (existing styles) */
+
+/* Media query for screens with a maximum width of 768px (typical for mobile devices) */
+@media (max-width: 768px) {
+  .mobile-steps {
+    /* Reorder columns for mobile screens */
+    flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: 1024px) {
+  .popup-dialog {
+    width: 50%; /* Smaller percentage for larger screens */
+    height: 70%; /* Smaller percentage for larger screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .popup-dialog {
+    width: 95%; /* Higher percentage for smaller screens for width */
+    height: 60%; /* Decrease the height for mobile screens */
+    top: 20%; /* Optionally adjust the vertical position */
+    transform: translate(-50%, -20%); /* Adjust translation to align with the new top value */
+  }
+  .popup-body iframe {
+    height: 300px; /* Decrease the height of the iframe on mobile devices */
+  }
+}
+/* @media (max-width: 767px) {
+  .h5-heading {
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 0; 
+    padding: 0;
+  }
+
+  .textbox {
+    margin-top: 0; 
+    padding-top: 0; 
+  }
+
+  
+  .col-lg-5 > .h5-heading {
+    margin-top: 60px;
+    margin-left:10px;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+
+  .col-lg-5 > .card.textbox {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .h5-heading {
+    text-align: left;
+    margin-top: 0px; 
+    margin-bottom: 0; 
+    padding: 0; 
+  }
+
+  .textbox {
+    margin-top: 0; 
+    padding-top: 0; 
+  }
+
+  .col-lg-5 > .h5-heading {
+    margin-top: 190px;
+    margin-bottom: 10px;
+    margin-left:10px;
+    padding: 0;
+  }
+
+  .col-lg-5 > .card.textbox {
+    margin-top: 0;
+    padding-top: 0;
+  }
+} */
+
+/* Base styles */
+.h5-heading, .textbox {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .col-lg-5 > .h5-heading {
+    margin-top: 90px;
+    margin-left: 10px;
+  }
+
+  .col-lg-5 > .card.textbox {
+    padding-top: 0;
+  }
+}
+
+/* Tablet and desktop styles */
+@media (min-width: 768px) {
+  /* .col-lg-5 > .h5-heading {
+    margin-top: 190px;
+    margin-left:10px;
+  } */
+
+  .col-lg-5 > .card.textbox {
+    padding-top: 0;
+  }
+}
+
+
