@@ -28,14 +28,7 @@ function App() {
         <VideoModal isOpen={videoModalOpen} onClose={handleClose} /> */}
       <Link to="/SIJE"></Link>
       <Link to="/Akshayatritiya"></Link>
-      <Link to="/Bhimagala"></Link>
-      <Link to="/Mysuru"></Link>
-      <Link to="/Madurai"></Link>
-      <Link to="/Hoodi"></Link>
-      <Link to="/Hydrabad"></Link>
-      <Link to="/Generic"></Link>
-      <Link to="/Udupi"></Link>
-      <Link to="/Hassan"></Link>
+      <Link to="giftpage"></Link>
       <Link to="/thank-you"></Link>
       <Link to="/"></Link>
       {/* Add your routes here */}
@@ -53,6 +46,7 @@ function App() {
         <Route exact path="/udupi" element={<GiftPage path='/conditions.html' bannerImg={UDUPI_IMG.banner} mbBannerImg={UDUPI_IMG.mbBanner} campaignKey='udupi' />} />
         <Route exact path="/hassan" element={<GiftPage path='/HassanTerms.html' bannerImg={HASSAN_IMG.banner} mbBannerImg={HASSAN_IMG.mbBanner} campaignKey='hassan' />} />
         <Route exact path="/tvm" element={<GiftPage path='/conditions.html' bannerImg={UDUPI_IMG.banner} mbBannerImg={UDUPI_IMG.mbBanner} campaignKey='tvm' />} />
+        <Route exact path="/diamondoffer" element={<GiftPage path='/conditions.html' bannerImg={UDUPI_IMG.banner} mbBannerImg={UDUPI_IMG.mbBanner} campaignKey='tvm' />} />
         <Route exact path="/cochin" element={<GiftPage path='/conditions.html' bannerImg={HASSAN_IMG.banner} mbBannerImg={HASSAN_IMG.mbBanner} campaignKey='cochin' />} />
         <Route path="/thank-you" element={<ThankYouPage />} />
         <Route exact path="/" element={

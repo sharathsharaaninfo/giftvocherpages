@@ -3,7 +3,6 @@ import './Giftpage.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Header from '../components/Header/header';
-import ReactGA from 'react-ga';
 import IconButton from '@mui/material/IconButton';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import VoucherDetailsModal from './VoucherDetailsModal';
@@ -116,7 +115,7 @@ function App({ path, bannerImg, mbBannerImg, campaignKey }) {
   const [isCouponClaimed, setIsCouponClaimed] = useState(false);
   const [isClaimButtonClicked, setIsClaimButtonClicked] = useState(false);
   const [termsAndConditions, setTermsAndConditions] = useState('');
-  const [showButton, setShowButton] = useState(false);
+  //const [showButton, setShowButton] = useState(false);
   const [clearCache, setClearCache] = useState(false);
   const [copySuccess, setCopySuccess] = useState('');
   const [showVoucherModal, setShowVoucherModal] = useState(false);
@@ -206,7 +205,7 @@ function App({ path, bannerImg, mbBannerImg, campaignKey }) {
     }
   };
 
-  
+
   useEffect(() => {
     fetch('/CouponCode.json')
       .then((response) => response.json())
@@ -223,93 +222,93 @@ function App({ path, bannerImg, mbBannerImg, campaignKey }) {
   }, [codes, campaignKey]);
 
   // to claim coupon
-  const claimCoupon = async () => {
-    try {
-      setIsClaimButtonClicked(true);
-      const claimRequestBody = {
-        VoucherCode: 'Bhima',
-        CustomerName: 'Bhima Jewellers',
-        MobileNo: mobile,
-      };
-      // const allOriginsUrl = 'https://api.allorigins.win/raw?url=';
-      const apiUrl = 'https://giftcardwebapis.bhima.info/api_db.js/api/bhima/akvouchercode';
-      //const fullApiUrl = allOriginsUrl + encodeURIComponent(apiUrl);
-
-      console.log('Claim URL:', apiUrl);
-      console.log('Request Body:', claimRequestBody);
-
-      const claimResponse = await axios.post(apiUrl, claimRequestBody, {
-        headers: { 'Content-Type': 'application/json' },
-      });
-
-
-      const claimResponseData = await claimResponse.data;
-      console.log('Claim Response Status:', claimResponse.status);
-      console.log('Claim Response Data:', claimResponseData);
-
-      console.log(claimResponseData);
-
-      if (claimResponseData.status >= 200 && claimResponseData.status < 300) {
-        console.log('Gift coupon claimed successfully');
-        setVoucherDetails({
-          CardNumber: claimResponseData.CardNumber,
-          CardPIN: claimResponseData.CardPIN,
-          ResponseMessage: claimResponseData.ResponseMessage
-        });
-        setIsCouponClaimed(true);
-      } else {
-        console.log('Failed to claim gift coupon');
-      }
-    } catch (error) {
-      console.error('Error claiming gift coupon:', error);
-    }
-  };
-
-
   // const claimCoupon = async () => {
   //   try {
   //     setIsClaimButtonClicked(true);
-
-  //     // Modify the request body to only include mobile number
   //     const claimRequestBody = {
+  //       VoucherCode: 'Bhima',
+  //       CustomerName: 'Bhima Jewellers',
   //       MobileNo: mobile,
   //     };
-
-  //     // Replace the API URL with the new API URL and append the mobile number as a query parameter
-  //     const apiUrl = getCouponDetailsUrl(mobile, code); 
+  //     // const allOriginsUrl = 'https://api.allorigins.win/raw?url=';
+  //     const apiUrl = 'https://giftcardwebapis.bhima.info/api_db.js/api/bhima/akvouchercode';
+  //     //const fullApiUrl = allOriginsUrl + encodeURIComponent(apiUrl);
 
   //     console.log('Claim URL:', apiUrl);
   //     console.log('Request Body:', claimRequestBody);
 
-  //     const claimResponse = await fetch(apiUrl, {
-  //       method: 'GET',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
+  //     const claimResponse = await axios.post(apiUrl, claimRequestBody, {
+  //       headers: { 'Content-Type': 'application/json' },
   //     });
 
-  //     const claimResponseData = await claimResponse.json();
+
+  //     const claimResponseData = await claimResponse.data;
   //     console.log('Claim Response Status:', claimResponse.status);
   //     console.log('Claim Response Data:', claimResponseData);
 
   //     console.log(claimResponseData);
 
-  //     if (claimResponse.ok) {
+  //     if (claimResponseData.status >= 200 && claimResponseData.status < 300) {
   //       console.log('Gift coupon claimed successfully');
   //       setVoucherDetails({
-  //         code: claimResponseData.code,
-  //         message: claimResponseData.message,
+  //         CardNumber: claimResponseData.CardNumber,
+  //         CardPIN: claimResponseData.CardPIN,
+  //         ResponseMessage: claimResponseData.ResponseMessage
   //       });
   //       setIsCouponClaimed(true);
-  //       setShowVoucherModal(true);  // Open the modal when the coupon is claimed successfully
   //     } else {
   //       console.log('Failed to claim gift coupon');
   //     }
-
   //   } catch (error) {
   //     console.error('Error claiming gift coupon:', error);
   //   }
   // };
+
+
+  const claimCoupon = async () => {
+    try {
+      setIsClaimButtonClicked(true);
+
+      // Modify the request body to only include mobile number
+      const claimRequestBody = {
+        MobileNo: mobile,
+      };
+
+      // Replace the API URL with the new API URL and append the mobile number as a query parameter
+      const apiUrl = getCouponDetailsUrl(mobile, code);
+
+      console.log('Claim URL:', apiUrl);
+      console.log('Request Body:', claimRequestBody);
+
+      const claimResponse = await fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const claimResponseData = await claimResponse.json();
+      console.log('Claim Response Status:', claimResponse.status);
+      console.log('Claim Response Data:', claimResponseData);
+
+      console.log(claimResponseData);
+
+      if (claimResponse.ok) {
+        console.log('Gift coupon claimed successfully');
+        setVoucherDetails({
+          code: claimResponseData.code,
+          message: claimResponseData.message,
+        });
+        setIsCouponClaimed(true);
+        setShowVoucherModal(true);  // Open the modal when the coupon is claimed successfully
+      } else {
+        console.log('Failed to claim gift coupon');
+      }
+
+    } catch (error) {
+      console.error('Error claiming gift coupon:', error);
+    }
+  };
 
 
   const handleVerify = async (otp) => {
@@ -342,11 +341,9 @@ function App({ path, bannerImg, mbBannerImg, campaignKey }) {
 
   // const handleVerify = () =>{
   //   console.log('otp');
-
   // }
 
   // const handleResend = () => {
-
   //   if (otpSent) {
   //     console.log('Resending OTP');
   //   }

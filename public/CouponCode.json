@@ -2,13 +2,14 @@
     "akshaya": 2,
     "udupi": 3,
     "mysuru": 4,
-    "madhurai":5,
     "hydrabad":6,
     "hoodi":7,
     "bhimagala":8,
     "hassan":9,
     "generic":10,
-    "akshayatritiya":11,
-    "tvm":12,
-    "cochin":13
+    "akshayatritiya":1,
+    "tvm":11,
+    "cochin":12,
+    "madhurai":13,
+    "diamondOffer":14
   }

@@ -6,7 +6,7 @@ import './akshaya.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Header from '../components/Header/header';
-import ReactGA, { send } from 'react-ga';
+//import ReactGA, { send } from 'react-ga';
 import IconButton from '@mui/material/IconButton';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import VoucherDetailsModal from './VoucherDetailsModal'; 
